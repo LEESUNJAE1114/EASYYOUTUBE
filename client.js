@@ -1,4 +1,3 @@
-// 클라이언트 스크립트
 document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById("search-button");
     const searchInput = document.getElementById("search-input");
@@ -51,4 +50,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-

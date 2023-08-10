@@ -14,7 +14,8 @@ app.use(cors({
 app.post('/search', async (req, res) => {
     try {
         const searchTerm = req.body.searchTerm;
-        const apiKey = 'AIzaSyA37ZVgKjAx0zsosami0N_aUYfrf0ZG7tw '; 
+        const apiKey = 'AIzaSyA37ZVgKjAx0zsosami0N_aUYfrf0ZG7tw'; // 실제 API 키로 대체해야 함
+
         const response = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
             params: {
                 q: searchTerm,
