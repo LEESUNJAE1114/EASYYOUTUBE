@@ -13,7 +13,20 @@ app.use(cors({
 
 app.post('/search', async (req, res) => {
     try {
-        // Your search logic here...
+        const searchTerm = req.body.searchTerm;
+        const apiKey = 'AIzaSyA37ZVgKjAx0zsosami0N_aUYfrf0ZG7tw '; 
+        const response = await axios.get(`https://www.googleapis.com/youtube/v3/search`, {
+            params: {
+                q: searchTerm,
+                key: apiKey,
+                maxResults: 10,
+                part: 'snippet',
+                type: 'video'
+            }
+        });
+
+        const searchResults = response.data.items;
+        res.json(searchResults);
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
